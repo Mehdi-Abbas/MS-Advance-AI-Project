@@ -91,7 +91,7 @@ def build_bank(cfg, use_augmentation=True, cache_suffix=""):
     cache_file = cache_root / f"bank{cache_suffix}.npz"
     np.savez(cache_file, X=X, y=y, mu_r=mu_r, mu_f=mu_f, Sigma=Sigma)
     
-    print(f"✓ Bank built: {X.shape[0]} features ({int((y==0).sum())} real, {int((y==1).sum())} fake)")
+    print(f"Bank built: {X.shape[0]} features ({int((y==0).sum())} real, {int((y==1).sum())} fake)")
     print(f"  Saved to: {cache_file}\n")
     
     return {

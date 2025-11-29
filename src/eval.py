@@ -122,8 +122,8 @@ def load_test_data(data_root, max_per_class=None):
     """Load test images - prefer stressed version if available"""
     
     # Priority: test_stress > test_extreme > test > fallback
-    for test_dir_name in ['test_stress', 'test_extreme', 'test']:
-        test_root = Path(data_root) / test_dir_name
+    for test_dir_name in ['test']:
+        test_root = Path(data_root)
         if test_root.exists():
             print(f"Using test set: {test_dir_name}/")
             real_paths = list(list_images(test_root / "real"))
@@ -131,7 +131,7 @@ def load_test_data(data_root, max_per_class=None):
             break
     else:
         # Fallback to data/real and data/fake
-        print("Warning: No test folder found, using data/real and data/fake")
+        print("Warning: No test folder found, using train/real and train/fake")
         real_paths = list(list_images(Path(data_root) / "real"))
         fake_paths = list(list_images(Path(data_root) / "fake"))
     
@@ -208,7 +208,7 @@ def main():
     
     # Load test data
     max_per = cfg["eval"].get("max_per_class", None)
-    test_images = load_test_data(cfg["paths"]["data_root"], max_per)
+    test_images = load_test_data(cfg["paths"]["test_root"], max_per)
     
     print(f"Loaded {len(test_images)} test images "
           f"({sum(1 for _, l in test_images if l==0)} real, "

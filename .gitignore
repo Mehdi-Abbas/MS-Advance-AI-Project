@@ -30,15 +30,16 @@ venv/
 
 # --- Project data/artifacts ---
 # Ignore large/raw data; keep tiny test samples.
-# data/**
+
+data/cifake
 # !data/.gitkeep
 # !data/README.md
 # !data/test/**
 # !data/test/.gitkeep
 
 # Feature bank / intermediate caches
-cache/**
-!cache/.gitkeep
+# cache/**
+# !cache/.gitkeep
 
 # Checkpoints / experiment logs (if later added)
 checkpoints/**
