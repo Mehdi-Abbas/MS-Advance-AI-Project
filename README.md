@@ -160,7 +160,6 @@ python -m src.eval
 
 ```bash
 python -m src.detect path\to\your_image.jpg
-# prints: {"path": "...", "score": 0.23, "pred": 1}   # 1=fake, 0=real
 ```
 
 ---

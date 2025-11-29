@@ -30,7 +30,8 @@ venv/
 
 # --- Project data/artifacts ---
 # Ignore large/raw data; keep tiny test samples.
-# data/**
+
+data/cifake
 # !data/.gitkeep
 # !data/README.md
 # !data/test/**
