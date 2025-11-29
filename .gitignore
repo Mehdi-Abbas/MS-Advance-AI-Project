@@ -38,8 +38,8 @@ data/cifake
 # !data/test/.gitkeep
 
 # Feature bank / intermediate caches
-cache/**
-!cache/.gitkeep
+# cache/**
+# !cache/.gitkeep
 
 # Checkpoints / experiment logs (if later added)
 checkpoints/**
